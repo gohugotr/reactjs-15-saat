@@ -39,7 +39,7 @@ Formdan girilen verileri ekrana bastırmak için
 
 diye bir fonksiyon tanımlanır.
 
-2. Bu fonksiyon Contacts componentine props ile geçilir.
+2. Bu fonksiyon Contacts companentine props ile geçilir.
 ```js script
       <div className="App">
         <Contacts addContact={this.addContact} contacts={this.state.contacts} />
