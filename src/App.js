@@ -35,7 +35,7 @@ class App extends Component {
       {
         contacts:contacts,
       }
-    )
+    );
   }
   render() {
     return (

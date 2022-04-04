@@ -27,7 +27,7 @@ class Form extends Component {
       {
           ...this.state
       }
-    )
+    );
     // Submit edildikten sonraki durum
     // this.setState(
     //   {
