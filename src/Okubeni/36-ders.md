@@ -146,28 +146,26 @@ formdan veri girip console'dan görebiliriz.
     );
   }
 ```
-* Son adımda formdaki veriyi gönderdikten sonra giriş alanların temizlenmesi gerekiyor. 
+
+- Son adımda formdaki veriyi gönderdikten sonra giriş alanların temizlenmesi gerekiyor.
   <img src="2022-04-04-18-10-25.png" width="450">
 
 Submit edildikten sonraki durum kodunu eklemeliyiz.
 
 ```js script
- onSubmit(e)
- {
-    e.preventDefault();
-    this.props.addContact(
-      {
-          ...this.state
-      }
-    );
-    //Submit edildikten sonraki durum
-    this.setState(
-      {
-        name:'',
-        phone:''
-      }
-    )
- };
- ```
- ve sonuç ...
+onSubmit(e);
+{
+  e.preventDefault();
+  this.props.addContact({
+    ...this.state,
+  });
+  //Submit edildikten sonraki durum
+  this.setState({
+    name: "",
+    phone: "",
+  });
+}
+```
+
+ve sonuç ...
 <img src="2022-04-04-18-15-00.png" width="450">

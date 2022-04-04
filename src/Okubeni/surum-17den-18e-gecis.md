@@ -16,7 +16,6 @@ root.render(
   </React.StrictMode>
 );
 
-<details>
 
 //React 17 sürümü
 ReactDOM.render(
@@ -26,4 +25,3 @@ ReactDOM.render(
   document.getElementById("root")
 );
 ```
-</details>
