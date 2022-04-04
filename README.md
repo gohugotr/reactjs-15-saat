@@ -1,3 +1,5 @@
+# Uygulamalı ReactJs Eğitimi 15.5 saat
+
 React 17'den React 18'e geçiş.
 **index.js** dosyası içindeki kodların değişimi
 ```js script
