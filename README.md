@@ -58,7 +58,8 @@ diye bir fonksiyon tanımlanır.
 4. **Contact.js** componentinde *PropTypes*'leri ayarlıyoruz. 
 Başvurusunu bu şekilde ekliyoruz. <code>import PropTypes from 'prop-types';</code>
 ```js script
-// export default Contacts; buradan hemen önceye bu kodu girilir. Yani Contacts componentinin bitişine.
+    // export default Contacts; buradan hemen önceye bu kodu girilir. 
+    //Yani Contacts componentinin bitişine.
     Contacts.propType = {
         contacts: PropTypes.array.isRequired,
         addContact: PropTypes.func, // addContact fonksiyon olduğundan
