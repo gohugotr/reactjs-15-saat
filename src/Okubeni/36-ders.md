@@ -132,7 +132,7 @@ formdan veri girip console'dan görebiliriz.
   }
 ```
 
-- Son adımda da eklenen değerlerin, ekranda gözükmesi için <code>this.setSate({})</code> yapıyoruz.
+- Üçüncü adımda da eklenen değerlerin, ekranda gözükmesi için <code>this.setSate({})</code> yapıyoruz.
 
 ```js script
   addContact(contact) {
@@ -146,3 +146,24 @@ formdan veri girip console'dan görebiliriz.
     );
   }
 ```
+* Son adımda formdaki veriyi gönderdikten sonra giriş alanların temizlenmesi gerekiyor. 
+  <img src="2022-04-04-18-10-25.png" width="200">
+
+```js script
+ onSubmit(e)
+ {
+    e.preventDefault();
+    this.props.addContact(
+      {
+          ...this.state
+      }
+    );
+    //Submit edildikten sonraki durum
+    this.setState(
+      {
+        name:'',
+        phone:''
+      }
+    )
+ };
+ ```

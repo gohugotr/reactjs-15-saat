@@ -28,13 +28,13 @@ class Form extends Component {
           ...this.state
       }
     );
-    // Submit edildikten sonraki durum
-    // this.setState(
-    //   {
-    //     name:'',
-    //     phone:''
-    //   }
-    // )
+    //Submit edildikten sonraki durum
+    this.setState(
+      {
+        name:'',
+        phone:''
+      }
+    )
  };
 
   render() {
