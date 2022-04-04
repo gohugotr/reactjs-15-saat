@@ -1,0 +1,13 @@
+input{
+    margin-top: 10px;
+    height: 25px;
+    line-height: 25px;
+    text-indent: 10px;
+    width:98.4%;
+}
+.list li{
+    display: flex;
+    justify-content:space-between;
+    padding: 5px;
+    background-color: bisque;
+}
