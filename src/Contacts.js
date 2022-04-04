@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import List from './List';
 import Form from './Form';
+import PropTypes from 'prop-types';
 
 class Contacts extends Component {
   render() {
@@ -12,4 +13,8 @@ class Contacts extends Component {
     )
   }
 }
+Contacts.propType = {
+  contacts: PropTypes.array.isRequired,
+  addContact: PropTypes.func,
+};
 export default Contacts;

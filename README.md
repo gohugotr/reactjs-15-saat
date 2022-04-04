@@ -41,7 +41,7 @@ Formdan girilen verileri ekrana bastırmak için
 
 diye bir fonksiyon tanımlanır.
 
-2. Bu fonksiyon Contacts companentine props ile geçilir.
+2. Bu fonksiyon Contacts componentine props ile geçilir.
 ```js script
       <div className="App">
         <Contacts addContact={this.addContact} contacts={this.state.contacts} />
@@ -54,4 +54,13 @@ diye bir fonksiyon tanımlanır.
     super(props);
     this.addContact = this.addContact.bind(this); 
   }
+```
+4. **Contact.js** componentinde *PropTypes*'leri ayarlıyoruz. 
+Başvurusunu bu şekilde ekliyoruz. <code>import PropTypes from 'prop-types';</code>
+```js script
+// export default Contacts; buradan hemen önceye bu kodu girilir. Yani Contacts componentinin bitişine.
+    Contacts.propType = {
+        contacts: PropTypes.array.isRequired,
+        addContact: PropTypes.func, // addContact fonksiyon olduğundan
+    };
 ```
