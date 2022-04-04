@@ -150,7 +150,7 @@ formdan veri girip console'dan görebiliriz.
 - Son adımda formdaki veriyi gönderdikten sonra giriş alanların temizlenmesi gerekiyor.
   <img src="2022-04-04-18-10-25.png" width="450">
 
-Submit edildikten sonraki durum kodunu eklemeliyiz.
+*'Submit edildikten sonraki durum'* kodunu eklemeliyiz.
 
 ```js script
 onSubmit(e);
