@@ -44,4 +44,4 @@ addContact propsunu yine props olarak tanımlıyoruz.
   <Form addContact={this.props.addContact}/>
 ```
 6. Url'mizin bu şekilde değilde "http://localhost:3000/" şeklinde kalmasını istiyoruz. 
-![](2022-04-04-16-42-39.png | width=100)
+![](2022-04-04-16-42-39.png =250x250)
