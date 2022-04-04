@@ -8,7 +8,7 @@ class Contacts extends Component {
     return (
       <div>
           <List contacts={this.props.contacts}/>
-          <Form/>
+          <Form addContact={this.props.addContact}/>
       </div>
     )
   }
