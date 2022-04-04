@@ -43,13 +43,7 @@ addContact propsunu yine props olarak tanımlıyoruz.
 ```js script
   <Form addContact={this.props.addContact}/>
 ```
-<<<<<<< HEAD
+
 6. Url'mizin bu şekilde değilde "http://localhost:3000/" şeklinde kalmasını istiyoruz.
 
    <img src="2022-04-04-16-42-39.png" height="120">
-=======
-6. Url'mizin bu şekilde değilde "http://localhost:3000/" şeklinde kalmasını istiyoruz. 
-![](2022-04-04-16-42-39.png)
-
-<img src="2022-04-04-16-42-39.png" height="100">
->>>>>>> 8650c457336ea17cdd6ef560778632dac21b2ecd
