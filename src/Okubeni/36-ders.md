@@ -70,7 +70,7 @@ state'timize değerleri giriyorduk.
 State'timizdeki bu değerleri <code>...this.state</code> kodu ile 
 *name* ve *phone* alanlarına atıyoruz. 
 
-Bunu console'dan <code>console.log({...this.state})</code> görebiliriz.
+Bunu console'dan <code>console.log({...this.state})</code> ile görebiliriz.
 
 Nihai kodumuz şu şekilde;
 ```js script
