@@ -13,7 +13,7 @@ class Form extends Component {
     phone: "",
   };
 
-  veriGir(e)
+  onChange(e)
   {
         this.setState({
           [e.target.name] : e.target.value,
@@ -40,8 +40,8 @@ class Form extends Component {
   render() {
     return (
       <form onSubmit={this.onSubmit}>
-        <input name="name" id="name" onChange={this.veriGir} value={this.state.name} placeholder="Bir isim giriniz" />
-        <input name="phone" id="phone" onChange={this.veriGir} value={this.state.phone} placeholder="Bir telefon giriniz" />
+        <input name="name" id="name" onChange={this.onChange} value={this.state.name} placeholder="Bir isim giriniz" />
+        <input name="phone" id="phone" onChange={this.onChange} value={this.state.phone} placeholder="Bir telefon giriniz" />
         <button>Ekle</button>
       </form>
     );

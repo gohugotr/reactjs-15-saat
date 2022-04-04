@@ -66,11 +66,11 @@ kodunu yazıyoruz.
 
 7. Bu aşamada state değerlerini props alanlarına atıyoruz.
 
-**Form.js**'deyken <code>veriGir()</code> fonksiyonu ile
+**Form.js**'deyken <code>onChange()</code> fonksiyonu ile
 state'timize değerleri giriyorduk.
 
 ```js script
-veriGir(e);
+onChange(e);
 {
   this.setState({
     [e.target.name]: e.target.value,
