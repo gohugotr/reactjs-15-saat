@@ -16,18 +16,18 @@ class Form extends Component {
   veriGir(e)
   {
         this.setState({
-          [e.target.name]:e.target.value,
+          [e.target.name] : e.target.value,
         })
   };
  onSubmit(e)
  {
-    //e.preventDefault();
+    e.preventDefault();
     //console.log({...this.state});
-    // this.props.addContact(
-    //   {
-    //       ...this.state
-    //   }
-    // )
+    this.props.addContact(
+      {
+          ...this.state
+      }
+    )
     // Submit edildikten sonraki durum
     // this.setState(
     //   {

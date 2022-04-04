@@ -44,6 +44,45 @@ addContact propsunu yine props olarak tanımlıyoruz.
   <Form addContact={this.props.addContact}/>
 ```
 
-6. Url'mizin bu şekilde değilde "http://localhost:3000/" şeklinde kalmasını istiyoruz.
+6. Url'mizin resimdeki şekilde değilde, "http://localhost:3000/" şeklinde kalmasını istiyoruz.
 
    <img src="2022-04-04-16-42-39.png" height="120">
+
+```js script
+  onSubmit(e)
+ {
+    e.preventDefault();
+ }
+```
+kodunu yazıyoruz.
+
+7. **Form.js**'deyken <code>veriGir()</code> fonksiyonu ile 
+state'timize değerleri giriyorduk.
+
+```js script
+  veriGir(e)
+  {
+        this.setState({
+          [e.target.name] : e.target.value,
+        })
+  };
+```
+State'timizdeki bu değerleri <code>...this.state</code> kodu ile 
+*name* ve *phone* alanlarına atıyoruz. 
+
+Bunu console'dan <code>console.log({...this.state})</code> görebiliriz.
+
+Nihai kodumuz şu şekilde;
+```js script
+ {
+    e.preventDefault();
+    //console.log({...this.state});
+    this.props.addContact(
+      {
+          ...this.state
+      }
+    )
+ }
+```
+
+
