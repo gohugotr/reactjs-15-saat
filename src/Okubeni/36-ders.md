@@ -147,7 +147,9 @@ formdan veri girip console'dan görebiliriz.
   }
 ```
 * Son adımda formdaki veriyi gönderdikten sonra giriş alanların temizlenmesi gerekiyor. 
-  <img src="2022-04-04-18-10-25.png" width="200">
+  <img src="2022-04-04-18-10-25.png" width="450">
+
+Submit edildikten sonraki durum kodunu eklemeliyiz.
 
 ```js script
  onSubmit(e)
@@ -167,3 +169,5 @@ formdan veri girip console'dan görebiliriz.
     )
  };
  ```
+ ve sonuç ...
+   <img src="2022-04-04-18-15-00.png" width="450">
