@@ -46,4 +46,4 @@ addContact propsunu yine props olarak tanımlıyoruz.
 6. Url'mizin bu şekilde değilde "http://localhost:3000/" şeklinde kalmasını istiyoruz. 
 ![](2022-04-04-16-42-39.png)
 
-<img src="2022-04-04-16-42-39.png" width="200" height="100">
+<img src="2022-04-04-16-42-39.png" height="100">
