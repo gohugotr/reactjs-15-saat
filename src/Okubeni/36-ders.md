@@ -31,7 +31,7 @@ diye bir fonksiyon tanımlanır.
 4. **Contact.js** componentinde *PropTypes*'leri ayarlıyoruz. 
 Başvurusunu bu şekilde ekliyoruz. <code>import PropTypes from 'prop-types';</code>
 ```js script
-    // export default Contacts; buradan hemen önceye bu kodu girilir. 
+    // export default Contacts; buradan hemen önceye bu kod girilir. 
     //Yani Contacts componentinin bitişine.
     Contacts.propType = {
         contacts: PropTypes.array.isRequired,
@@ -43,3 +43,5 @@ addContact propsunu yine props olarak tanımlıyoruz.
 ```js script
   <Form addContact={this.props.addContact}/>
 ```
+6. Url'mizin bu şekilde değilde "http://localhost:3000/" şeklinde kalmasını istiyoruz. 
+![](2022-04-04-16-42-39.png){ height="50px" width="150px" }

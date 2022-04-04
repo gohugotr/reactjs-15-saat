@@ -21,20 +21,20 @@ class Form extends Component {
   };
  onSubmit(e)
  {
-    e.preventDefault();
+    //e.preventDefault();
     //console.log({...this.state});
-    this.props.addContact(
-      {
-          ...this.state
-      }
-    )
+    // this.props.addContact(
+    //   {
+    //       ...this.state
+    //   }
+    // )
     // Submit edildikten sonraki durum
-    this.setState(
-      {
-        name:'',
-        phone:''
-      }
-    )
+    // this.setState(
+    //   {
+    //     name:'',
+    //     phone:''
+    //   }
+    // )
  };
 
   render() {
