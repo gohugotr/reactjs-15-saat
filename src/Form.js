@@ -4,7 +4,7 @@ class Form extends Component {
   constructor()
   {
     super();
-    this.veriGir = this.veriGir.bind(this);
+    this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
   }
