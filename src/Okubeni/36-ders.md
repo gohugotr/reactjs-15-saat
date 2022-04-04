@@ -170,4 +170,4 @@ Submit edildikten sonraki durum kodunu eklemeliyiz.
  };
  ```
  ve sonuç ...
-   <img src="2022-04-04-18-15-00.png" width="450">
+  <img src="2022-04-04-18-15-00.png" width="450">
