@@ -15,8 +15,9 @@ root.render(
     <App />
   </React.StrictMode>
 );
+```
 
-
+```js script
 //React 17 sürümü
 ReactDOM.render(
   <React.StrictMode>
