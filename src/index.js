@@ -1,6 +1,5 @@
 import React from "react";
-//import ReactDOM from "react-dom"; //React 17
-import { createRoot } from "react-dom/client"; //React 18
+import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App";
 
@@ -12,12 +11,3 @@ root.render(
     <App />
   </React.StrictMode>
 );
-
-// React 17 sürümü
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById("root")
-// );
-

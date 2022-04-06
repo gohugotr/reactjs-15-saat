@@ -1,49 +1,13 @@
-import { Component } from "react";
-import "./App.css";
-import Contacts from "./Contacts";
+import React, { Component } from 'react'
+import "./App.css"
 
 class App extends Component {
-
-  constructor(props)
-  {
-    super(props);
-    this.addContact = this.addContact.bind(this); 
-  }
-
-  state = {
-    contacts: [
-      {
-        name: "Cengiz Yılmaz",
-        phone: "0505 666 77 88",
-      },
-      {
-        name: "Tuba Tekin",
-        phone: "0545 566 00 99",
-      },
-      {
-        name: "Ahmet Yılmaz",
-        phone: "0535 647 34 22",
-      },
-    ],
-  };
-
-  addContact(contact) {
-    //console.log(contact);
-    const {contacts} = this.state;
-    contacts.push(contact);
-    this.setState(
-      {
-        contacts:contacts,
-      }
-    );
-  }
   render() {
     return (
-      <div className="App">
-        <Contacts addContact={this.addContact} contacts={this.state.contacts} />
+      <div className='App'>
+        App
       </div>
-    );
+    )
   }
 }
-
 export default App;
