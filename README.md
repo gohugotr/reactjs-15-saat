@@ -64,5 +64,33 @@ class App extends Component {
 export default App;
 ```
 ## Hiyerarşik Yapı
-![](2022-04-10-02-21-31.png)
 
+**Child** componenti de **App** componentinin aynısı, burada hiyerarşiye dikkat.
+```js script
+class App extends Component {
+  constructor(props)
+  {
+    console.log('Constructor çalıştı..')
+    super(props);
+  }
+
+  componentWillMount(){
+    console.log("WillMount çalıştı.");
+  }
+
+  componentDidMount(){
+    console.log("DidMount çalıştı."); 
+  }
+
+  render() {
+    console.log('Render çalıştı.')
+    return (
+      <div>
+        <Child />
+      </div>
+    )
+  }
+}
+export default App;
+```
+<img src="2022-04-10-02-21-31.png" height="350">
