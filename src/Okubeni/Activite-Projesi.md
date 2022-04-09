@@ -31,7 +31,9 @@ class DecideActivity extends Component {
 }
 export default DecideActivity;
 ```
-ikinci **callback fonksiyonu** olarak ***error***'u ***Arrow function*** olarak dönüyoruz.
+İkinci **callback fonksiyonu** olarak ***error***'u ***Arrow function*** olarak dönüyoruz.
+
+Ayrıca ***npm start*** diyerek, <code>console.log(position)</code> ve <code>console.log(err.message)</code> ile kontrollerimizi yapabiliriz.
 ```js script
   render() {
     window.navigator.geolocation.getCurrentPosition((position) => {
@@ -47,4 +49,20 @@ ikinci **callback fonksiyonu** olarak ***error***'u ***Arrow function*** olarak 
     )
   }
 
+```
+###state Nasıl Kullanılır?
+*longtitude* sürekli değişikliğe uğrayan bir değer olduğu için **state** içinde tutulması lazım.
+* state sadece class componentlerde kullanılabilir, function ve stateless componentte kullanılamaz.
+* state, *component class*'ından hemen sonra ve **render()** den hemen önceye yazılır.
+* state = { longtitude:0, } şeklinde yazılır.
+* React ise bunu **constructor** içinde kullanmamızı istiyor. Kullanım şekli şu şekilde;
+```js script
+constructor(props)
+{
+  super(props);
+  this.state = 
+  { 
+    longtitude: 0,
+  };
+};
 ```

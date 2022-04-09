@@ -10,7 +10,7 @@ class DecideActivity extends Component {
     (err) => {
       console.log(err.message);
     }
-    );
+    ); 
 
     return (
       <div>
