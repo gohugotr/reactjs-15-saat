@@ -2,6 +2,14 @@ import React, { Component } from 'react'
 
 
 class DecideActivity extends Component {
+  constructor(props)
+  {
+    super(props);
+    this.state = 
+    {
+      longitude: 0,
+    }
+  }
   render() {
     window.navigator.geolocation.getCurrentPosition((position) => {
       //doSomething(position.coords.latitude, position.coords.longitude);
@@ -14,7 +22,7 @@ class DecideActivity extends Component {
 
     return (
       <div>
-
+        {this.state.longitude}
       </div>
     )
   }

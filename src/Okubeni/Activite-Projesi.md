@@ -50,11 +50,11 @@ Ayrıca ***npm start*** diyerek, <code>console.log(position)</code> ve <code>con
   }
 
 ```
-###state Nasıl Kullanılır?
-*longtitude* sürekli değişikliğe uğrayan bir değer olduğu için **state** içinde tutulması lazım.
+### state Nasıl Kullanılır?
+*longitude* sürekli değişikliğe uğrayan bir değer olduğu için **state** içinde tutulması lazım.
 * state sadece class componentlerde kullanılabilir, function ve stateless componentte kullanılamaz.
 * state, *component class*'ından hemen sonra ve **render()** den hemen önceye yazılır.
-* state = { longtitude:0, } şeklinde yazılır.
+* state = { longitude:0, } şeklinde yazılır.
 * React ise bunu **constructor** içinde kullanmamızı istiyor. Kullanım şekli şu şekilde;
 ```js script
 constructor(props)
@@ -62,7 +62,14 @@ constructor(props)
   super(props);
   this.state = 
   { 
-    longtitude: 0,
+    longitude: 0,
   };
 };
 ```
+* jsx ile html içinde şöyle gösterilir.
+```js script
+  <div>
+    {this.state.longitude}
+  </div>
+````
+Tabi gösterilen değer ilk atanan initial değer olan 0 olacaktır.
