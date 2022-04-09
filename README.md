@@ -63,3 +63,6 @@ class App extends Component {
 }
 export default App;
 ```
+## Hiyerarşik Yapı
+![](2022-04-10-02-21-31.png)
+
