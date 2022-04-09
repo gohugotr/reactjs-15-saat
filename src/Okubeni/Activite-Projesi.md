@@ -84,10 +84,22 @@ doğru değeri göstermek için ***position*** aldığımız yere gelip,
     }, 
     ...
 ```
-* ***sst*** kısaltmasıyla <code>this.setState{()}</code> kullanarak, güncel değeri bastırabiliriz.
+* ***sst*** kısaltmasıyla <code>this.setState({})</code> kullanarak, güncel değeri bastırabiliriz.
 * <code>this.setState</code> kullanımı şu şekilde
 ```js script
-  this.setState{(
-    longitude: position.coords.logitude
-  )};
+render() {
+    window.navigator.geolocation.getCurrentPosition((position) => {
+      console.log(position);
+      this.setState({
+          longitude: position.coords.logitude
+      });
+    },
+    ...
+```
+**ternary** koşul yazım şekli
+```js script
+    if(lat<0)
+    {
+        return currentMonth > 2 && currentMonth < 9 ? winter : summer;
+    } 
 ```
