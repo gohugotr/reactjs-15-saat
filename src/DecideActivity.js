@@ -14,6 +14,9 @@ class DecideActivity extends Component {
     window.navigator.geolocation.getCurrentPosition((position) => {
       //doSomething(position.coords.latitude, position.coords.longitude);
       console.log(position);
+      this.setState({
+        longitude: position.coords.longitude,
+      })
     },
     (err) => {
       console.log(err.message);

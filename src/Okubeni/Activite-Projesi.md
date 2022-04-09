@@ -73,3 +73,18 @@ constructor(props)
   </div>
 ````
 Tabi gösterilen değer ilk atanan initial değer olan 0 olacaktır.
+doğru değeri göstermek için ***position*** aldığımız yere gelip,
+```js script
+  render() {
+    window.navigator.geolocation.getCurrentPosition((position) => {
+      console.log(position);
+    }, 
+    ...
+```
+* ***sst*** kısaltmasıyla <code>this.setState{()}</code> kullanarak, güncel değeri bastırabiliriz.
+* <code>this.setState</code> kullanımı şu şekilde
+```js script
+  this.setState{(
+    longitude: position.coords.logitude
+  )};
+```
