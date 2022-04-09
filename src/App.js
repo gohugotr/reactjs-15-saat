@@ -7,6 +7,10 @@ class App extends Component {
   {
     console.log('Constructor çalıştı..')
     super(props);
+    this.state = {
+      favorirengim:'Kırmızı',
+    }
+    this.onClick = this.onClick.bind(this);
   }
 
   componentWillMount(){
@@ -17,14 +21,20 @@ class App extends Component {
     console.log("DidMount çalıştı."); 
     // Renderden sonra bir güncelleme istiyorsak bu önemli yapıyı kullanabiliriz.
   }
+  onClick(){
+    this.setState({
+      favorirengim:'Mavi',
+    });
+  }
 
   render() {
     console.log('Render çalıştı.')
     return (
-      <div>
-        <Child />
+      <div className='App'>
+        <Child renk={this.state.favorirengim} />
+        <button onClick={this.onClick}>Renk değiştir</button>
       </div>
-    )
+    );
   }
 }
 export default App;
