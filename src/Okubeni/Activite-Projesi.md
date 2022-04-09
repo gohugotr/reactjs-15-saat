@@ -1,3 +1,4 @@
+## state ve this.setState nasıl kullanılır?
 - Google'da "geolocation api" araması yapılır
 - https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API linkine gidilir.
 - _Using the Geolocation API_ bölümünde gidilir.
@@ -73,7 +74,7 @@ constructor(props)
   </div>
 ````
 
-### <code>this.setState</code> nasıl kullanılır?
+### this.setState nasıl kullanılır?
 Tabi gösterilen değer ilk atanan initial değer olan 0 olacaktır.
 doğru değeri göstermek için ***position*** aldığımız yere gelip,
 ```js script
