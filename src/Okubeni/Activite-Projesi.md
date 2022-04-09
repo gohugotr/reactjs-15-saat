@@ -1,4 +1,4 @@
-## state ve this.setState nasıl kullanılır?
+# state ve this.setState nasıl kullanılır?
 - Google'da "geolocation api" araması yapılır
 - https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API linkine gidilir.
 - _Using the Geolocation API_ bölümünde gidilir.
