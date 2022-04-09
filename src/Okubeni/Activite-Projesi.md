@@ -72,6 +72,8 @@ constructor(props)
     {this.state.longitude}
   </div>
 ````
+
+### <code>this.setState</code> nasıl kullanılır?
 Tabi gösterilen değer ilk atanan initial değer olan 0 olacaktır.
 doğru değeri göstermek için ***position*** aldığımız yere gelip,
 ```js script
