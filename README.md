@@ -77,7 +77,7 @@ componentDidMount() {
     };
   }
 ```
-2. **componentDidMount()** fonksiyonu içinde **this.setSate** ile *isloading* değişkeni **false** olarak güncellenir. Burada setTimeout fonskiyonunu kullanma zprunlu değil. 
+2. **componentDidMount()** fonksiyonu içinde **this.setSate** ile *isloading* değişkeni **false** olarak güncellenir. Burada setTimeout fonskiyonunu kullanma zorunlu değil. 
 
 Sadece daha iyi test edebilmek amacıyla setTimeout fonksiyonu ile datanın 2 saniye geç gelmesini sağlıyoruz.
 ```js script
