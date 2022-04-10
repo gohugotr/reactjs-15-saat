@@ -66,7 +66,6 @@ componentDidMount() {
  <img src="2022-04-10-15-02-20.png" width="400">
 
 ## loading yapımı; Api ile veri çekerken, 'Yükleniyor ...' mesajı verdirme. 
-<hr/>
 1. **constructor** içine **this.state** ile *isloading* değişkeni **true** olarak set edilir.
 ```js script
   constructor(props) {
