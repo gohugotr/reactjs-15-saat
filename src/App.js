@@ -27,11 +27,10 @@ class App extends Component {
     const{isloading} = this.state;
     return (
       <div className="App">
+        <h1>Users</h1>
         {
           isloading ? 'Yükleniyor ....' : ''
         }
-        <h1>Users</h1>
-
         {this.state.users.map((user) => (
           <div key={user.id}>
             <strong>{user.name} :</strong>
