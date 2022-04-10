@@ -62,7 +62,5 @@ componentDidMount() {
     );
   }
 ```
-<ins>**Sonuç**</ins>
-<hr/>
- 
+<ins>**Sonuç**</ins><hr/>
  <img src="2022-04-10-15-02-20.png" width="400">
