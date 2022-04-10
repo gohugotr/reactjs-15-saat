@@ -1,38 +1,42 @@
-import './App.css';
 import React, { Component } from 'react'
-import Child from './Child';
+import "./App.css"
 
 class App extends Component {
-  constructor(props)
-  {
-    console.log('Constructor çalıştı..')
+  constructor(props) {
     super(props);
+
     this.state = {
-      favorirengim:'Kırmızı',
-    }
-    this.onClick = this.onClick.bind(this);
+      users:[],
+    };
   }
-
-  componentWillMount(){
-    console.log("WillMount çalıştı.");
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then(data => 
+        {
+            this.setState(
+              {
+                users: data,
+              }
+            );
+      });
   }
-
-  componentDidMount(){
-    console.log("DidMount çalıştı."); 
-    // Renderden sonra bir güncelleme istiyorsak bu önemli yapıyı kullanabiliriz.
-  }
-  onClick(){
-    this.setState({
-      favorirengim:'Mavi',
-    });
-  }
-
   render() {
-    console.log('Render çalıştı.')
     return (
       <div className='App'>
-        <Child renk={this.state.favorirengim} />
-        <button onClick={this.onClick}>Renk değiştir</button>
+        <h1>Users</h1>
+        {
+            this.state.users.map((user) => (
+              <div key={user.id}>
+                  <strong>
+                    {user.name} : 
+                  </strong>  
+                {
+                  user.email
+                }
+              </div>
+            ))
+        }
       </div>
     );
   }
