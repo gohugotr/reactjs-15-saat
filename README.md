@@ -9,7 +9,7 @@
 [42. Ders burada](src/Okubeni/Activite-Projesi.md)
 
 ### LifeCycle / Yaşam Döngüsü
-[componentWillMount, componentDidMount](https://github.com/gohugotr/reactjs-15-saat/tree/yasam-dongusu/README.md)
+[componentWillMount, componentDidMount](https://github.com/gohugotr/reactjs-15-saat/tree/yasam-dongusu)
 
 ### Api ile veri çekme
-[jsonplaceholder.typicode.com'dan 5 maddede veri çekme](https://github.com/gohugotr/reactjs-15-saat/tree/vericek/README.md)
+[jsonplaceholder.typicode.com'dan 5 maddede veri çekme](https://github.com/gohugotr/reactjs-15-saat/tree/vericek)
