@@ -6,7 +6,7 @@
 [36. Ders burada](src/Okubeni/36-ders.md)
 
 ### state ve this.setState nasıl kullanılır?
-[42. Ders burada](src/Okubeni/Activite-Projesi.md)
+[42. Ders burada](https://github.com/gohugotr/reactjs-15-saat/tree/activite/src/Okubeni/Activite-Projesi.md)
 
 ### LifeCycle / Yaşam Döngüsü
 [componentWillMount, componentDidMount](https://github.com/gohugotr/reactjs-15-saat/tree/yasam-dongusu)
