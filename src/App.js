@@ -7,37 +7,37 @@ class App extends Component {
 
     this.state = {
       users:[],
+      isloading:true,
     };
   }
   componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then(data => 
-        {
-            this.setState(
-              {
+    setTimeout(()=>{
+          fetch("https://jsonplaceholder.typicode.com/users")
+            .then((response) => response.json())
+            .then((data) => {
+              this.setState({
                 users: data,
-              }
-            );
-      });
+                isloading: false,
+              });
+            });
+    },1000)
   }
   
   render() {
+    const{isloading} = this.state;
     return (
-      <div className='App'>
-        <h1>Users</h1>
+      <div className="App">
         {
-            this.state.users.map((user) => (
-              <div key={user.id}>
-                  <strong>
-                    {user.name} : 
-                  </strong>  
-                {
-                  user.email
-                }
-              </div>
-            ))
+          isloading ? 'Yükleniyor ....' : ''
         }
+        <h1>Users</h1>
+
+        {this.state.users.map((user) => (
+          <div key={user.id}>
+            <strong>{user.name} :</strong>
+            {user.email}
+          </div>
+        ))}
       </div>
     );
   }
