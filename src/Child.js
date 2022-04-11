@@ -14,7 +14,8 @@ class Child extends Component {
     console.log("Child DidMount çalıştı.");
   }
   componentWillReceiveProps(){
-      alert("Merhaba WillReceiveProps çalıştı");
+      //alert("Merhaba WillReceiveProps çalıştı");
+      // React 18'de kaldırıldı.
       console.log("WillReceiveProps çalıştı");
   }
 

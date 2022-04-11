@@ -96,4 +96,7 @@ export default App;
 <img src="2022-04-10-02-21-31.png" height="350">
 
 ### WillReceiveProps metodu
+
+**React 18'de** kaldırıldı.
+
 <img src="2022-04-10-02-55-18.png" height="380">
