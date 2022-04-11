@@ -1,5 +1,5 @@
 # LifeCycle / Yaşam Döngüsü
-## componentWillMount, componentDidMount
+## componentWillMount(), componentDidMount()
 
 ** 48. Ders **
 
@@ -95,7 +95,7 @@ export default App;
 ```
 <img src="2022-04-10-02-21-31.png" height="350">
 
-### WillReceiveProps metodu
+### WillReceiveProps() metodu
 
 **React 18'de** kaldırıldı. Props değiştiğinde tetiklenir.
 
