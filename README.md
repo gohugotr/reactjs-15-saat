@@ -97,6 +97,6 @@ export default App;
 
 ### WillReceiveProps metodu
 
-**React 18'de** kaldırıldı.
+**React 18'de** kaldırıldı. Props değiştiğinde tetiklenir.
 
 <img src="2022-04-10-02-55-18.png" height="380">
