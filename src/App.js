@@ -1,38 +1,38 @@
-import './App.css';
-import React, { Component } from 'react'
-import Child from './Child';
+import "./App.css";
+import React, { Component } from "react";
 
 class App extends Component {
-  constructor(props)
-  {
-    console.log('Constructor çalıştı..')
-    super(props);
-    this.state = {
-      favorirengim:'Kırmızı',
-    }
-    this.onClick = this.onClick.bind(this);
-  }
-
-  componentWillMount(){
-    console.log("WillMount çalıştı.");
-  }
-
-  componentDidMount(){
-    console.log("DidMount çalıştı."); 
-    // Renderden sonra bir güncelleme istiyorsak bu önemli yapıyı kullanabiliriz.
-  }
-  onClick(){
+  state = {
+    fiyat: 0,
+  };
+  changeFiyat = (e) => {
     this.setState({
-      favorirengim:'Mavi',
+      fiyat: e.target.value,
     });
+  };
+
+  shouldComponentUpdate(nextProps, nextState) {
+    //console.log(`shouldComponentUpdate nextProps:`, nextState);
+    return nextState.fiyat % 5 === 0; // 5 ve katları şeklinde portakal alınmasını istiyoruz.
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    console.log("componentWillUpdate", nextProps, nextState);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log("componentDidUpdate", prevProps, prevState);
   }
 
   render() {
-    console.log('Render çalıştı.')
     return (
-      <div className='App'>
-        <Child renk={this.state.favorirengim} />
-        <button onClick={this.onClick}>Renk değiştir</button>
+      <div className="App">
+        <br />
+        <input name="fiyat" id="fiyat" onChange={this.changeFiyat} />
+        <br />
+        <strong>Her Portakal 5 TL</strong>
+
+        <p>{this.state.fiyat / 5} tane portakal alınabilir</p>
       </div>
     );
   }

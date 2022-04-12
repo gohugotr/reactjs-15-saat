@@ -1,102 +1,60 @@
-# LifeCycle / Yaşam Döngüsü
-## componentWillMount(), componentDidMount()
+# `ShouldComponentUpdate(nextProps, nextState)` Metodu
 
-** 48. Ders **
+Componentin render edilip, edilmeyeceğine karar vermemizi sağlar.
+`true` dönerse component `render` edilir.
+1. <code>state</code> ile `fiyat` değişkenini `0` olarak ayarlıyoruz. (`constructor` içinde `this.state` ile de yapabiliriz.)
+2. `<input name="fiyat" id="fiyat" />` ile fiyat giriş alanı sağlıyoruz.
+3. `<p>{this.state.fiyat / 5} tane portakal alınabilir</p>` ile gösterim yapıyoruz.
+4. **`fiyat`** değişkeni state'inin güncellenmesi için;
+    * `<input name="fiyat" id="fiyat" onChange={this.changeFiyat} />` **onChange** olayı
+    için <code>changeFiyat</code> fonksiyonunu geçiyoruz.
+    * changeFiyat() fonksiyonunu bind etmeden kullanmak için `arrow` fonksiyon olarak
+    tanımlıyouruz. Diğer türlü `constructor` içinde <code>this.onChange = this.changeFiyat.bind(this)</code> şeklinde bind etmemiz gerekirdi.
+    ```js script 
+    changeFiyat = (e) => {
+        ......
+    };
+    ```
+    * changeFiyat() fonksiyonu içinde `setState` durumunu  <code>fiyat: e.target.value,</code> olarak set ediyoruz.
+5. componentin sadece fiyatın 5 ve katları şeklinde render edilebilmesi için;
+    * **`scu`** kısayoluyla <code>shouldComponentUpdate(nextProps, nextState) {return ...}</code> fonksiyonunu kuruyoruz.
+    * nexstate.fiyat değişkeninin 5'e bölümü `0` ise, componentin render edilmesini yani fiyat hesaplamasını sağlıyoruz. <code>return nextState.fiyat % 5 === 0;</code>
 
-1. İlkönce **conctructor()** metodu çalışır.
-2. Sonra **componentWillMount()** metodu çalışır.
-3. Sonra **render()** metodu çalışır.
-4. Sonra **componentDidMount()** metodu çalışır.
-
-### DidMount Metodu
-Burada **DidMount** metodunu 4 saniye sonra çalıştırdığımızda;
-ilk olarak render metodundan hemen sonra çalışacak. 
-İkinci olarak da 4 saniye gecikmeli olarak **render()** metodunu tekrar çalıştırıp, 
-sonra da **componentDidMount()** metodu çalışacaktır.
-```js script
-componentDidMount(){
-    console.log("DidMount çalıştı.");
-    // 4 saniye sonra metodu çalıştıracaz. Böylece Render 2 kere çalışacak.
-    setTimeout(() => {
-      this.setState({
-        favorirengim: 'Mavi',
-      })
-    }, 4000);
-    // Renderden sonra bir güncelleme istiyorsak bu önemli yapıyı kullanabiliriz.
-  }
-```
-Tam Kod
 ```js script
 class App extends Component {
-  constructor(props)
-  {
-    console.log('Constructor çalıştı..')
-    super(props);
-    this.state = {
-      favorirengim:'Kırmızı'
-    }
-  }
+  state = {
+    fiyat: 0,
+  };
+  changeFiyat = (e) => {
+    this.setState({
+      fiyat: e.target.value,
+    });
+  };
 
-  componentWillMount(){
-    console.log("WillMount çalıştı.");
-  }
-
-  componentDidMount(){
-    console.log("DidMount çalıştı.");
-    // 4 saniye sonra metodu çalıştıracaz. Böylece Render 2 kere çalışacak.
-    setTimeout(() => {
-      this.setState({
-        favorirengim: 'Mavi',
-      })
-    }, 4000);
-    // Renderden sonra bir güncelleme istiyorsak bu önemli yapıyı kullanabiliriz.
+  shouldComponentUpdate(nextProps, nextState) {
+    //console.log(`shouldComponentUpdate nextProps:`, nextState);
+    return nextState.fiyat % 5 === 0; // 5 ve katları şeklinde portakal alınmasını istiyoruz.
   }
 
   render() {
-    console.log('Render çalıştı.')
     return (
-      <div>
-        Favori Rengim {this.state.favorirengim}
+      <div className="App">
+        <br />
+        <input name="fiyat" id="fiyat" onChange={this.changeFiyat} />
+
+        <strong>Her Portakal 5 TL</strong>
+        <br />
+
+        <p>{this.state.fiyat / 5} tane portakal alınabilir</p>
       </div>
-    )
+    );
   }
 }
 export default App;
 ```
-## Hiyerarşik Yapı
+## `componentWillUpdate` ve `componentDidUpdate` Metodu
 
-**Child** componenti de **App** componentinin aynısı, burada hiyerarşiye dikkat.
-```js script
-class App extends Component {
-  constructor(props)
-  {
-    console.log('Constructor çalıştı..')
-    super(props);
-  }
+* **<code>componentWillUpdate(nextProps, nextState)</code>** metodu render'den önce,
+* **<code>componentDidUpdate(prevProps, prevState)</code>** metodu render'den sonra çalışır.
 
-  componentWillMount(){
-    console.log("WillMount çalıştı.");
-  }
-
-  componentDidMount(){
-    console.log("DidMount çalıştı."); 
-  }
-
-  render() {
-    console.log('Render çalıştı.')
-    return (
-      <div>
-        <Child />
-      </div>
-    )
-  }
-}
-export default App;
-```
-<img src="2022-04-10-02-21-31.png" height="350">
-
-### WillReceiveProps() metodu
-
-**React 18'de** kaldırıldı. Props değiştiğinde tetiklenir.
-
-<img src="2022-04-10-02-55-18.png" height="380">
+<img src="2022-04-12-04-21-44.png" width="650">
