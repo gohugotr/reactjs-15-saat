@@ -65,7 +65,7 @@ componentDidMount() {
 <ins>**Sonuç**</ins><hr/>
  <img src="2022-04-10-15-02-20.png" width="400">
 
-## loading yapımı; Api ile veri çekerken, 'Yükleniyor ...' mesajı verdirme. 
+## loading yapımı; Api ile veri çekerken, `Yükleniyor ...` mesajı verdirme. 
 1. **constructor** içine **this.state** ile *isloading* değişkeni **true** olarak set edilir.
 ```js script
   constructor(props) {
@@ -112,4 +112,22 @@ Sadece daha iyi test edebilmek amacıyla setTimeout fonksiyonu ile datanın 2 sa
           isloading ? 'Yükleniyor ....' : ''
         }
     .......
+```
+## `axios` ile Apiden veri çekme.
+- npm i --save axios ile paket indirilerek package.json dosyasına eklenmesi sağlanır.
+- `fetch` yerine `axios.get` kullanılır.
+-  Veriler data olarak geldiğinden `.then((response) => response.json())` satırı `.then((response) => response.data)` ile değiştirilir.
+```js script
+componentDidMount() {
+    setTimeout(()=>{
+          axios.get("https://jsonplaceholder.typicode.com/users")
+            .then((response) => response.data)
+            .then((data) => {
+              this.setState({
+                users: data,
+                isloading: false,
+              });
+            });
+    },1000)
+  }
 ```

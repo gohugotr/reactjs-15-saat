@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { Component } from 'react'
 import "./App.css"
 
@@ -12,8 +13,8 @@ class App extends Component {
   }
   componentDidMount() {
     setTimeout(()=>{
-          fetch("https://jsonplaceholder.typicode.com/users")
-            .then((response) => response.json())
+          axios.get("https://jsonplaceholder.typicode.com/users")
+            .then((response) => response.data)
             .then((data) => {
               this.setState({
                 users: data,
