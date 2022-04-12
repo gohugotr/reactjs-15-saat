@@ -1,133 +1,70 @@
-# Api ile veri çekme
+# Getting Started with Create React App
 
-## [jsonplaceholder.typicode.com](https://jsonplaceholder.typicode.com)'dan 5 maddede veri çekme
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-* https://jsonplaceholder.typicode.com/users alanından veri çekmeye çalışalım.
+## Available Scripts
 
-1. **state** içinde users değişkeni dizi olarak tanımlanır.
+In the project directory, you can run:
 
-```js script
-  constructor(props) {
-    super(props);
+### `npm start`
 
-    this.state = {
-      users:[],
-    };
-  }
-```
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-2. <code>render()</code> alanından hemen önce, **cdm** kısayoluyla **componentDidMount()** fonksiyonu yazılır.
-3. [jsonplaceholder.typicode.com](https://jsonplaceholder.typicode.com) sitesindeki api kullanım örneği alınır.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-```js script
-fetch("https://jsonplaceholder.typicode.com/todos/1")
-  .then((response) => response.json())
-  .then((json) => console.log(json));
-```
+### `npm test`
 
-4. Bunun içinde, JSON tipinde çekilen veri, <code>this.setState</code> (kısayolu _sst_) ile users array'ine atanır.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-```js script
-componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then(data =>
-        {
-            this.setState(
-              {
-                users: data,
-              }
-            );
-      });
-  }
-```
-5. Son olarak render() içine gösterim yapılır.
+### `npm run build`
 
-```js script
-  render() {
-    return (
-      <div className='App'>
-        <h1>Users</h1>
-        {
-            this.state.users.map((user) => (
-              <div key={user.id}>
-                <strong> {user.name} : </strong>
-                {
-                  user.email
-                }
-              </div>
-            ))
-        }
-      </div>
-    );
-  }
-```
-<ins>**Sonuç**</ins><hr/>
- <img src="2022-04-10-15-02-20.png" width="400">
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## loading yapımı; Api ile veri çekerken, `Yükleniyor ...` mesajı verdirme. 
-1. **constructor** içine **this.state** ile *isloading* değişkeni **true** olarak set edilir.
-```js script
-  constructor(props) {
-    super(props);
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-    this.state = {
-      users:[],
-      isloading:true,
-    };
-  }
-```
-2. **componentDidMount()** fonksiyonu içinde **this.setSate** ile *isloading* değişkeni **false** olarak güncellenir. Burada setTimeout fonskiyonunu kullanma zorunlu değil. 
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Sadece daha iyi test edebilmek amacıyla setTimeout fonksiyonu ile datanın 2 saniye geç gelmesini sağlıyoruz.
-```js script
-  componentDidMount() {
-    setTimeout(()=>{
-          fetch("https://jsonplaceholder.typicode.com/users")
-            .then((response) => response.json())
-            .then((data) => {
-              this.setState({
-                users: data,
-                isloading: false,
-              });
-            });
-    },2000)
-  }
-```
-3. **render()**'den sonra **return**'den önce isloading değişkenini kulanabilmek amacıyla, this.state ile değişkenin güncel durumunu alıyoruz.
-```js script
- render() {
+### `npm run eject`
 
-    const{isloading} = this.state;
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-    return ( ......
-```
-4. Son olarak gösterimi ternary koşulu ile sağlıyoruz..
-```js script
-  render() {
-    const{isloading} = this.state;
-    return (
-      <div className="App">
-        {
-          isloading ? 'Yükleniyor ....' : ''
-        }
-    .......
-```
-## `axios` ile Apiden veri çekme.
-- npm i --save axios ile paket indirilerek package.json dosyasına eklenmesi sağlanır.
-- `fetch` yerine `axios.get` kullanılır.
--  Veriler data olarak geldiğinden `.then((response) => response.json())` satırı `.then((response) => response.data)` ile değiştirilir.
-```js script
-componentDidMount() {
-    setTimeout(()=>{
-          axios.get("https://jsonplaceholder.typicode.com/users")
-            .then((response) => response.data)
-            .then((data) => {
-              this.setState({
-                users: data,
-                isloading: false,
-              });
-            });
-    },1000)
-  }
-```
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
