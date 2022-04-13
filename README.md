@@ -11,5 +11,14 @@
 ### LifeCycle / Yaşam Döngüsü
 [componentWillMount, componentDidMount](https://github.com/gohugotr/reactjs-15-saat/tree/yasam-dongusu)
 
+### LifeCycle / Yaşam Döngüsü
+[ShouldComponentUpdate(nextProps, nextState) Metodu](https://github.com/gohugotr/reactjs-15-saat/tree/yasam-dongusu-shouldcomponentupdate)
+
+### LifeCycle / Yaşam Döngüsü
+[WillReceiveProps() metodu](https://github.com/gohugotr/reactjs-15-saat/tree/yasam-dongusu-willreceive-props)
+
 ### Api ile veri çekme
 [jsonplaceholder.typicode.com'dan 5 maddede veri çekme](https://github.com/gohugotr/reactjs-15-saat/tree/vericek)
+
+### Generic Component Oluşturma
+[Generic bir Component İnşa Etme](https://github.com/gohugotr/reactjs-15-saat/tree/generic-component)
