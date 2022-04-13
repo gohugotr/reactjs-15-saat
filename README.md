@@ -58,3 +58,36 @@ Ayrıca `this.setState` ile gelen veriyi değişkenlere aktarıyoruz.
   }
 ```
 ### `Generic bir Component İnşa Etme`
+1. **`rafce`** kısayolu ile Arrow Function Component oluşturuyoruz.
+```js script
+const loaderHOC = (WrappedComponent) => {
+  return (
+    <div>
+        
+    </div>
+  )
+}
+export default loaderHOC
+```
+2. ```js script
+    return class loaderHOC extends Component { 
+            render() {
+                return ....
+            }
+        }
+```
+    kalıbının içine return ile generic ifadeyi dönüyoruz.
+3. ```js script
+    const loaderHOC = (WrappedComponent) => {
+    return class loaderHOC extends Component {
+        render() {
+            return <WrappedComponent {...this.props} />;
+        }
+    }}
+
+    export default loaderHOC;
+```
+4. Post.js içinde `import loaderHOC from './loaderHOC'` ile loaderHOC.js'yi import ediyoruz.
+Son olarak `export default Post;` ifadesini `export default loaderHOC(Post);`olarak değiştiriyoruz.
+
+    **ÖZET:** Artık loaderHOC() fonksiyonunu tüm api çağrılarımızda generic bir yapı olarak kullanabiliriz.
