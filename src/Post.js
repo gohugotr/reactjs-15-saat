@@ -5,8 +5,8 @@ class Post extends Component {
     return (
       <div>
           {
-              this.props.isloading ? 
-              <span>Yükleniyor ...</span> :
+              this.props.isloading ? <span>Yükleniyor ...</span> 
+              :
               this.props.posts.map(post =>
                     <div key={post.id}>
                         {post.title}
