@@ -95,11 +95,12 @@ export default App;
 * `NavLink`, Link elementinin ***class*** veya ***style*** verilebilen tipidir.
 * `Routes` dışında tanımlanır.
 ```js script
-// Kullanım örnekleri,
+// Kullanım örnekleri, 
 // App.css içinde .iletisim{ color: rgb(16, 197, 61);font-size: large;}
 
-    <NavLink to="/" style={{ color: "red" }} >Anasayfa</NavLink>
-    <NavLink to="/iletisim" className='iletisim' ><h3>İletişim</h3></NavLink>
-    <Link to="destek" >{<u>Destek<sup>3</sup></u>}</Link>
+<NavLink to="/" style={{ color: "red" }} >Anasayfa</NavLink>
+<NavLink to="/iletisim" className='iletisim' ><h3>İletişim</h3></NavLink>
+<Link to="destek" >{<u>Destek<sup>3</sup></u>}</Link>
+
 ```
- <img src="2022-04-15-02-41-33.png" width="200" />
+<img src="2022-04-15-02-41-33.png" width="200" />
