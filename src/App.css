@@ -6,6 +6,10 @@
   height: 40vmin;
   pointer-events: none;
 }
+.iletisim{
+  color: rgb(16, 197, 61);
+  font-size: large;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

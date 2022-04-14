@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { Component } from "react";
-import { BrowserRouter as Router, Routes, Route, useParams } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useParams, Link, NavLink } from "react-router-dom";
 
 class App extends Component {
   render() {
@@ -16,8 +16,11 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+          <NavLink to="/" style={{ color: "red" }} >Anasayfa</NavLink>
+          <NavLink to="/iletisim" className='iletisim' ><h3>İletişim</h3></NavLink>
+          <Link to="destek" >{<u>Destek<sup>3</sup></u>}</Link>
           <Routes>
-            <Route path="/" element={<Anasayfa />} />
+            <Route path="/" element={<Anasayfa />}></Route>
             <Route path="iletisim" element={<h3>İletişim</h3>} />
             <Route path="/iletisim/:id" element={<Iletisim />} />
             <Route path="destek" exact element={<h2>Destek</h2>} />
