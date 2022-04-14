@@ -48,3 +48,45 @@ class App extends Component {
   }
 }
 ```
+### Route ile parametre gönderme
+
+* App.js içinde `render()`'den hemen sonra, const ifadesiyle arrow function tipinde menü tanımlıyoruz.
+* Bu fonksiyon içinde `import` ettiğimiz **useParams'a** `let` ile **id** parametresini eşitliyoruz.
+```js script
+let {id} = useParams();
+```
+* Fonksiyonu **return** ederken URL'de `id` kullandığımız ID'nin gösterimini <code>{id}</code> şeklinde aşağıda görüldüğü gibi yapabiliriz.
+```js script
+return <h3>İletişim: {id}</h3>;
+```
+* Son olarak `Route` componenti içindeki gösterim 
+`<Route path="/iletisim/:id" element={<Iletisim />} />` şeklinde olmalıdır.
+
+## <u>`Tam Gösterim`</u>
+```js script
+import React, { Component } from "react";
+import { BrowserRouter as Router, Routes, Route, useParams } from "react-router-dom";
+
+class App extends Component {
+  render() {
+
+    const Iletisim = () => {
+      let { id } = useParams();
+      return <h3>İletişim: {id}</h3>;
+    };
+
+    return (
+      <Router>
+        <div>
+          <Routes>
+            <Route path="iletisim" element={<h3>İletişim</h3>} />
+            <Route path="/iletisim/:id" element={<Iletisim />} />
+          </Routes>
+        </div>
+      </Router>
+    );
+  }
+}
+
+export default App;
+```
