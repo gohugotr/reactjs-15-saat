@@ -104,3 +104,21 @@ export default App;
 
 ```
 <img src="2022-04-15-02-41-33.png" width="200" />
+
+* React router versiyon 6'da 404 Hata sayfası için 2 adım var.
+  1. App.js içinde return'den hemen önce 404 fonksiyonu tanımlanır.
+  ```js script
+    const Error = () => {
+      return <h3>404 Hata. Sayfa bulunamadı.</h3>
+    }
+  ```
+  2. `<Routes> ... </Routes>` içinde **`path="*"`** şeklinde `<Error />` componentli `<Route />` tanımlanır.
+  ```js script
+    <Routes>
+              <Route path="/" element={<Anasayfa />} />
+              <Route path="iletisim" element={<h3>İletişim</h3>} />
+              <Route path="/iletisim/:id" element={<Iletisim />} />
+              <Route path="destek" exact element={<h2>Destek</h2>} />
+              <Route path="*" element={<Error />} />
+    </Routes>
+  ```

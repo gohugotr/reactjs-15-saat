@@ -40,6 +40,10 @@ class App extends Component {
       );
     };
 
+    const Error = () => {
+      return <h3>404 Hata. Sayfa bulunamadı.</h3>
+    }
+
     return (
       <Router>
         <div className="App">
@@ -70,14 +74,15 @@ class App extends Component {
           />
 
           <Routes>
-            <Route path="/" element={<Anasayfa />} />
-            <Route path="iletisim" element={<h3>İletişim</h3>} />
-            <Route path="/iletisim/:id" element={<Iletisim />} />
-            <Route path="destek" exact element={<h2>Destek</h2>} />
-            <Route
-              path="/profile"
-              element={this.state.loggedIn ? <Profile /> : <Navigate to="/" />}
-            />
+              <Route path="/" element={<Anasayfa />} />
+              <Route path="iletisim" element={<h3>İletişim</h3>} />
+              <Route path="/iletisim/:id" element={<Iletisim />} />
+              <Route path="destek" exact element={<h2>Destek</h2>} />
+              <Route
+                path="/profile"
+                element={this.state.loggedIn ? <Profile /> : <Navigate to="/" />}
+              />
+              <Route path="*" element={<Error />} />
           </Routes>
         </div>
       </Router>
