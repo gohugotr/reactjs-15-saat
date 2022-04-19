@@ -57,6 +57,7 @@ module.exports = {
 5. `onClick` ve `onKeyDown` eventleriyle ile arama iconuna tıklandığında girilen değer `App componentine` gönderilir.
 6. App.js içinde gelen state değerini karşılayan onSearchImage fonksiyonu yazılır.
 7. `<SearchBar />` componentine `onSearchImage propsu` tanımlanır ve `onSearchImage` set edilir.
+<hr/>
 
 1. `rcc` ile `SearcBar class componenti`, SearcBar.js içinde oluşturulur.
 
