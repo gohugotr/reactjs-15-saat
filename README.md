@@ -102,7 +102,7 @@ export default class SearchBar extends Component {
     };
   }
 ```
-4. input içinde `onChange` olayına `inputChanged` fonksiyonu atanır. Böylece `setState` ile giriş takip edilir.
+4. input içinde **`onChange`** olayına `inputChanged` fonksiyonu atanır. Böylece `setState` ile giriş takip edilir.
 
 ```js script
 <input className="search" onChange={this.inputChanged} placeholder="Ara..." type="text" name="search" />
@@ -117,7 +117,7 @@ export default class SearchBar extends Component {
     });
   };
 ```
-5. svg arama iconunda onClick olayına atama yapılır. <code>onClick={this.svgSearchClick}</code>
+5. svg arama iconunda **`onClick`** olayına atama yapılır. <code>onClick={this.svgSearchClick}</code>
   * svgSearchClick arrow fonksiyonu ile App.js içinde **<SearchBar />** componentindeki `onSearchImage props`'una `search state` durum bilgisi gönderilir.
 
   ```js script
@@ -126,7 +126,7 @@ export default class SearchBar extends Component {
         this.props.onSearchImage(this.state.search);
       };
   ```
-  * Enter tuşuna basılınca da aynı etkiyi sağlamak için input için onKeyDown olayını tanımlıyoruz.
+  * Enter tuşuna basılınca da aynı etkiyi sağlamak için input için **`onKeyDown`** olayını tanımlıyoruz.
 
   ```js script
       onKeyDown={(e) => {
