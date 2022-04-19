@@ -148,3 +148,5 @@ export default class SearchBar extends Component {
   ```js script
       <SearchBar onSearchImage={this.onSearchImage} />
   ```
+  **`Sonuç`**
+  ![](2022-04-20-02-50-57.png) 
