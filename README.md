@@ -1,6 +1,6 @@
-# Galeri - resim projesi / Bölüm 9 - Ders 70
+# `Galeri - resim projesi / Bölüm 9 - Ders 70`
 
-* Tailwind.css implementasyonu
+## <u>Tailwind.css implementasyonu</u>
 
 1. <code>npm install -D tailwindcss postcss autoprefixer</code>
 
