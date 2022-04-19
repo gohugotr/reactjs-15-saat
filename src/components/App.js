@@ -4,6 +4,7 @@ import SearchBar from "./SearchBar"
 class App extends Component {
   onSearchImage = (search) => {
     console.log("App.js içindeyiz : " + search);
+    alert('Arana Terim: ' + search);
   };
   render() {
     return (
