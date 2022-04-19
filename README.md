@@ -74,19 +74,22 @@ export default class SearchBar extends Component {
 2. `<div></div>` arasına, Tailwind css ile arama kutusu oluşturulur. **input** elementindeki **className="search"** main.css içinde tanımlandı.
 
 ```js script
-<label className="relative block">
-  <span className="sr-only">Search</span>
-  <span className="absolute inset-y-0 left-0 flex items-center pl-2">
-    <svg viewBox="0 0 20 20" className="w-4 h-4 fill-current">
-      <path
-        xmlns="http://www.w3.org/2000/svg"
-        d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
-      />
-    </svg>
-  </span>
-  <input className="search" placeholder="Ara..." type="text" name="search" />
-</label>
+  <div className="container mx-auto w-4/6 py-4 px-4">
+    <label className="relative block">
+      <span className="sr-only">Search</span>
+      <span className="absolute inset-y-0 left-0 flex items-center pl-2">
+        <svg viewBox="0 0 20 20" className="w-4 h-4 fill-current">
+          <path
+            xmlns="http://www.w3.org/2000/svg"
+            d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
+          />
+        </svg>
+      </span>
+      <input className="search" placeholder="Ara..." type="text" name="search" />
+    </label>
+  </div>
 ```
+
 ### `Fonksiyonlar`
 
 3. **constructor** içinde `search state'i` için başlangıç değeri tanımlanır.
