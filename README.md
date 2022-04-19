@@ -126,7 +126,7 @@ export default class SearchBar extends Component {
         this.props.onSearchImage(this.state.search);
       };
   ```
-  * Enter tuşuna basılınca da aynı etkiyi sağlamak için input için **`onKeyDown`** olayını tanımlıyoruz.
+  * Enter tuşuna basılınca da değer göndermek için input için **`onKeyDown`** olayını tanımlıyoruz.
 
   ```js script
       onKeyDown={(e) => {
@@ -135,7 +135,7 @@ export default class SearchBar extends Component {
           }
       }}
   ```
-  6. onSearchImage arrow fonksiyonu, search stateni parametre olarak alır.
+  6. `onSearchImage` arrow fonksiyonu, `search state`'ni parametre olarak alır.
 
   ```js script
       onSearchImage = (search) => {
@@ -143,7 +143,7 @@ export default class SearchBar extends Component {
         alert('Arana Terim: ' + search);
       };
   ```
-  7. SearchBar componentini propsuna atama yapılır.
+  7. SearchBar componentinin propsuna atama yapılır.
 
   ```js script
       <SearchBar onSearchImage={this.onSearchImage} />
