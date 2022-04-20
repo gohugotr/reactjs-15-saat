@@ -217,7 +217,7 @@ Bu yapıya göre dolduruyoruz.
       })
     };
   ```
-  * Artık bir `const` ile değişkene atayabiliriz.
+  * Artık `const` ile gelen veriyi bir değişkene atayabiliriz.
 
   ```js script
   onSearchImage = async(search) => 
