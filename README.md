@@ -153,5 +153,85 @@ export default class SearchBar extends Component {
 
 ### `axios` ile unsplash.com apisinden veri çekme
 
-1. npm install --save axios ile paketi kuruyoruz.
-2. 
+1. `npm install --save axios` ile paketi kuruyoruz.
+2. App.js içine import edilir. `import axios form "axios"`
+3. axios genel yapı şu şekilde;
+```js script
+    axios.get("url",{
+      params:{
+
+      },
+      headers: {
+
+      }
+    })
+```
+Bu yapıya göre dolduruyoruz.
+```js script
+    axios.get("https://api.unsplash.com/search/photos", {
+      params: 
+      { 
+        query : search
+      },
+      headers: 
+      { 
+        Authorization: 'Client-ID ML5T9rOlcLziCWrr0xgufyObJ86A0gpV36rPixpv...' 
+      },
+    }).then(result => {
+      console.log(result.data.results);
+    })
+```
+5. onSearchImage fonksiyonunu async / await yapısına dönüştürüyoruz.
+  * İlk hali
+  ```js script
+    onSearchImage = search => {
+      axios.get("https://api.unsplash.com/search/photos", {
+        params: 
+        { 
+          query : search
+        },
+        headers: 
+        { 
+          Authorization: 'Client-ID ML5T9rOlcLziCWrr0xgufyObJ86A0gpV36rPixpvcaE' 
+        },
+      }).then(result => {
+        console.log(result.data.results);
+      })
+    };
+  ```
+  * `async/await` yapısı
+  ```js script
+    onSearchImage = async(search) => 
+    {
+      await axios.get("https://api.unsplash.com/search/photos", {
+        params: 
+        { 
+          query : search
+        },
+        headers: 
+        { 
+          Authorization: 'Client-ID ML5T9rOlcLziCWrr0xgufyObJ86A0gpV36rPixpvcaE' 
+        },
+      }).then(result => {
+        console.log(result.data.results);
+      })
+    };
+  ```
+  * Artık bir `const` ile değişkene atayabiliriz.
+
+  ```js script
+  onSearchImage = async(search) => 
+  {
+      const resimdata = await axios.get("https://api.unsplash.com/search/photos", {
+        params: 
+        { 
+          query : search
+        },
+        headers: 
+        { 
+          Authorization: 'Client-ID ML5T9rOlcLziCWrr0xgufyObJ86A0gpV36rPixpvcaE' 
+        },
+      })
+      console.log(resimData.data.results);
+    };
+  ```
