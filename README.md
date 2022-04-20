@@ -219,3 +219,19 @@ Bu yapıya göre dolduruyoruz.
       console.log(resimData.data.results);
     };
   ```
+6. `state` içinde **images** değişkeni tanımlanır ve başlangıç değeri olarak boş bir dizi atanır. 
+  ```js script
+      state = {
+        images: [],
+      }
+  ```
+7. `sst` kısayolu ile this.setState içinde gelen veri **images** değişkenine atanır.
+```js script
+    this.setState({
+      images : resimData.data.results
+    })
+```
+8. Test için return içinde length değerine bakabiliriz. Arama yapıldığında, varsayılan olarak 10 resim sonucu gelir.
+```js script
+    <p>{this.state.images.length} sayıda resim bulundu.</p>
+```
