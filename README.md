@@ -3,11 +3,8 @@
 ## <u>Tailwind.css implementasyonu</u>
 
 1. <code>npm install -D tailwindcss postcss autoprefixer</code>
-
 2. <code>npx tailwindcss init</code>
-
 3. `npx tailwindcss init` komutuyla oluşturulan `tailwind.config.js` dosyasının içeriği şu şekilde düzenlenir.
-
 ```js script
 module.exports = {
   content: ["./src/**/*.{html,js}"],
@@ -17,22 +14,17 @@ module.exports = {
   plugins: [],
 };
 ```
-
 4. `main.css` dosyası oluşturulur. Bu dosyanın en başına aşağıdaki direktifler girilir.
-
 ```js script
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 ```
-
 5. **package.json** `"scripts": { ... ` içine aşağıdaki satırı ekliyoruz.
    `"tail": "npx tailwindcss -i ./src/main.css -o ./src/index.css --watch"`
-
 6. Farklı bir terminal penceresinde `npm run tail` komutu verilir.
    Böylece **main.css** içinde yazdığımız `tailwind css`, standart css çıktısı üretmiş oluruz. Css kodlarımız, senkronize bir şekilde **_index.css_** dosyasına yazılır.
 7. main.css içinde tailwind css yazarken @apply ile başlamalıyız. Yanyana veya alt alta yazılabilir.
-
 ```css
   .search {
     @apply placeholder:italic 
@@ -45,8 +37,9 @@ module.exports = {
       focus:ring-1 sm:text-sm;
   }
 ```
+<hr/>
 
-### `Searcbar componenti` arama alanına girilen ifadeyi, `App componentine` gönderme
+## `SearcBar componenti` arama alanına girilen ifadeyi, `App componentine` gönderme
 
 <u>`Yapılanlar`</u>
 
@@ -60,7 +53,6 @@ module.exports = {
 <hr/>
 
 1. `rcc` ile `SearcBar class componenti`, SearcBar.js içinde oluşturulur.
-
 ```js script
 import React, { Component } from "react";
 
@@ -70,9 +62,7 @@ export default class SearchBar extends Component {
   }
 }
 ```
-
 2. `<div></div>` arasına, Tailwind css ile arama kutusu oluşturulur. **input** elementindeki **className="search"** main.css içinde tanımlandı.
-
 ```js script
   <div className="container mx-auto w-4/6 py-4 px-4">
     <label className="relative block">
@@ -89,11 +79,9 @@ export default class SearchBar extends Component {
     </label>
   </div>
 ```
-
 ### `Fonksiyonlar`
 
 3. **constructor** içinde `search state'i` için başlangıç değeri tanımlanır.
-
 ```js script
   constructor(props) {
     super(props);
@@ -103,7 +91,6 @@ export default class SearchBar extends Component {
   }
 ```
 4. input içinde **`onChange`** olayına `inputChanged` fonksiyonu atanır. Böylece `setState` ile giriş takip edilir.
-
 ```js script
 <input className="search" onChange={this.inputChanged} placeholder="Ara..." type="text" name="search" />
 ```
@@ -119,7 +106,6 @@ export default class SearchBar extends Component {
 ```
 5. svg arama iconunda **`onClick`** olayına atama yapılır. <code>onClick={this.svgSearchClick}</code>
   * svgSearchClick arrow fonksiyonu ile App.js içinde **<SearchBar />** componentindeki `onSearchImage props`'una `search state` durum bilgisi gönderilir.
-
   ```js script
     svgSearchClick = () => {
         // this.props. adı App.js'te ki fonksiyon adı olacak. Ona paramtre gönderiyoruz.
@@ -127,7 +113,6 @@ export default class SearchBar extends Component {
       };
   ```
   * Enter tuşuna basılınca da değer göndermek için input için **`onKeyDown`** olayını tanımlıyoruz.
-
   ```js script
       onKeyDown={(e) => {
           if (e.key === "Enter") {
@@ -136,7 +121,6 @@ export default class SearchBar extends Component {
       }}
   ```
   6. `onSearchImage` arrow fonksiyonu, `search state`'ni parametre olarak alır.
-
   ```js script
       onSearchImage = (search) => {
         console.log("App.js içindeyiz : " + search);
@@ -144,14 +128,15 @@ export default class SearchBar extends Component {
       };
   ```
   7. SearchBar componentinin propsuna atama yapılır.
-
   ```js script
       <SearchBar onSearchImage={this.onSearchImage} />
   ```
   **`Sonuç`**
   ![](2022-04-20-02-50-57.png) 
 
-### `axios` ile unsplash.com apisinden veri çekme
+<hr/>
+
+## `axios` ile unsplash.com apisinden veri çekme
 
 1. `npm install --save axios` ile paketi kuruyoruz.
 2. App.js içine import edilir. `import axios form "axios"`
@@ -217,8 +202,7 @@ Bu yapıya göre dolduruyoruz.
       })
     };
   ```
-  * Artık `const` ile gelen veriyi bir değişkene atayabiliriz.
-
+  * Artık gelen veriyi, `const` ile  bir değişkene atayabiliriz.
   ```js script
   onSearchImage = async(search) => 
   {
