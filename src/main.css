@@ -18,3 +18,11 @@
     focus:ring-sky-500 
     focus:ring-1 sm:text-sm
 }
+.resim {
+    @apply
+    object-cover 
+    w-full h-full
+    rounded shadow-sm 
+    dark:bg-white
+    aspect-[4/3]
+}

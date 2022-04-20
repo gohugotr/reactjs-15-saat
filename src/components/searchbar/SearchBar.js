@@ -5,6 +5,7 @@ class SearchBar extends Component {
     super(props);
     this.state = {
       search: "",
+      per_page: 10,
     };
     // this.onChange = this.inputChanged.bind(this);
   }
@@ -14,10 +15,16 @@ class SearchBar extends Component {
     });
   };
 
+  input_per_page_Changed = (event) => {
+    this.setState({
+      per_page: event.target.value,
+    });
+  };
+
   svgSearchClick = () => {
     //console.log("Başarılı");
     // this.props. adı App.js'te ki fonksiyon adı olacak. Ona paramtre gönderiyoruz.
-    this.props.onSearchImage(this.state.search);
+    this.props.onSearchImage(this.state.search, this.state.per_page);
   };
   render() {
     return (
@@ -46,6 +53,19 @@ class SearchBar extends Component {
             name="search"
           />
         </label>
+        
+          <input
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                this.svgSearchClick();
+              }
+            }}
+            onChange={this.input_per_page_Changed}
+            placeholder="Kaç resim gösterilsin"
+            type="text"
+            id="per_page"
+            name="per_page"
+          />
       </div>
     );
   }
