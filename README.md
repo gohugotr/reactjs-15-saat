@@ -177,7 +177,7 @@ Bu yapıya göre dolduruyoruz.
         },
         headers: 
         { 
-          Authorization: 'Client-ID ML5T9rOlcLziCWrr0xgufyObJ86A0gpV36rPixpvcaE' 
+          Authorization: 'Client-ID ML5T9rOlcLziCWrr0xgufyObJ86A0gpV36rPixpv...' 
         },
       }).then(result => {
         console.log(result.data.results);
@@ -195,7 +195,7 @@ Bu yapıya göre dolduruyoruz.
         },
         headers: 
         { 
-          Authorization: 'Client-ID ML5T9rOlcLziCWrr0xgufyObJ86A0gpV36rPixpvcaE' 
+          Authorization: 'Client-ID ML5T9rOlcLziCWrr0xgufyObJ86A0gpV36rPixpv...' 
         },
       }).then(result => {
         console.log(result.data.results);
@@ -213,7 +213,7 @@ Bu yapıya göre dolduruyoruz.
         },
         headers: 
         { 
-          Authorization: 'Client-ID ML5T9rOlcLziCWrr0xgufyObJ86A0gpV36rPixpvcaE' 
+          Authorization: 'Client-ID ML5T9rOlcLziCWrr0xgufyObJ86A0gpV36rPixpv...' 
         },
       })
       console.log(resimData.data.results);
