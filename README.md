@@ -150,3 +150,8 @@ export default class SearchBar extends Component {
   ```
   **`Sonuç`**
   ![](2022-04-20-02-50-57.png) 
+
+### `axios` ile unsplash.com apisinden veri çekme
+
+1. npm install --save axios ile paketi kuruyoruz.
+2. 
