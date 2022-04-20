@@ -222,7 +222,7 @@ Bu yapıya göre dolduruyoruz.
   ```js script
   onSearchImage = async(search) => 
   {
-      const resimdata = await axios.get("https://api.unsplash.com/search/photos", {
+      const resimData = await axios.get("https://api.unsplash.com/search/photos", {
         params: 
         { 
           query : search
