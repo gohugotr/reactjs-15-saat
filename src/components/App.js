@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SearchBar from "./searchbar/SearchBar";
 import axios from "axios";
-import ImageList from "./image/ImageList"
+import ImageList from "./image/ImageList";
 
 class App extends Component {
   state = {
@@ -26,13 +26,13 @@ class App extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="bg-brand-color">
         <SearchBar onSearchImage={this.onSearchImage} />
         {/* <p>{this.state.images.length} sayıda resim bulundu.</p> */}
-        <ImageList images={this.state.images}  />
+        <ImageList images={this.state.images} />
       </div>
     );
   }
-};
+}
 
 export default App;
