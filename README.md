@@ -1,1 +1,1 @@
-# `Redux` Uygulamaası - Blog
+# `Redux` Uygulaması - Blog
