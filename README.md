@@ -25,3 +25,9 @@
 
 ### React Router
 [React Router, Route, Link, Navlink, Redirect](https://github.com/gohugotr/reactjs-15-saat/tree/router)
+
+
+### Galeri Uygulaması
+[Tailwind.css, Alt componentten üste state gönderme, Search sorgusuyla Unsplash.com Api'den resim çekme](https://github.com/gohugotr/reactjs-15-saat/tree/galeri)
+
+
