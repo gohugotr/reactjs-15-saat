@@ -6,7 +6,6 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 
 function App() {
   return (
-    <div className="App">
       <Router>
         <Navbar />
         <Routes>
@@ -15,7 +14,6 @@ function App() {
           <Route path="contact" element={<Contact />} />
         </Routes>
       </Router>
-    </div>
   );
 }
 
