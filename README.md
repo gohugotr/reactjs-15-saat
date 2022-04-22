@@ -52,17 +52,13 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink
-              to="about"
-              className={({ isActive }) => (isActive ? activeClassName : undefined)}
-            >
+              to="about" className={({ isActive }) => (isActive ? activeClassName : undefined)}>
               About
             </NavLink>
           </li>
           <li>
             <NavLink
-              to="contact"
-              className={({ isActive }) => (isActive ? activeClassName : undefined)}
-            >
+              to="contact" className={({ isActive }) => (isActive ? activeClassName : undefined)}>
               Contact
             </NavLink>
           </li>
