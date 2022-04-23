@@ -1,11 +1,25 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
 
 const Navbar = () => {
-    let activeStyle = {
-      textDecoration: "underline",
-    };
+    const history = useNavigate();
+    const { state } = useLocation();
 
-    let activeClassName = "underline";
+     useEffect(() => {
+       if (state === null || state === undefined) {
+          setTimeout(() => {
+            history("/about");
+          }, 2000);
+       }
+     });
+
+
+
+  let activeStyle = {
+    textDecoration: "underline",
+  };
+
+  let activeClassName = "underline";
   return (
     <nav>
       <div className="nav-wrapper">
