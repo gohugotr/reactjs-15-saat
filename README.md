@@ -71,4 +71,23 @@ const Navbar = () => {
 export default Navbar;
 ```
 
+### `useNavigate` ve `useEffect` ile 2 saniye sonra `about` sayfasına yönlendirme
+
+```js script
+  import { NavLink, useNavigate, useLocation } from "react-router-dom";
+  import React, { useEffect } from "react";
+
+  const Navbar = () => {
+      const history = useNavigate();
+      const { state } = useLocation();
+
+      useEffect(() => {
+        if (state === null || state === undefined) {
+            setTimeout(() => {
+              history("/about");
+            }, 2000);
+        }
+      });
+```
+
 [React router v6 changes](https://diyifang.medium.com/react-router-v6-changes-cc2f977f418f)
