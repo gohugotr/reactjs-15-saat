@@ -78,6 +78,7 @@ export default Navbar;
   import React, { useEffect } from "react";
 
   const Navbar = () => {
+    //Navbar.js içindeyiz
       const history = useNavigate();
       const { state } = useLocation();
 
@@ -88,6 +89,7 @@ export default Navbar;
             }, 2000);
         }
       });
+  ........
 ```
 
 [React router v6 changes](https://diyifang.medium.com/react-router-v6-changes-cc2f977f418f)
