@@ -92,4 +92,25 @@ export default Navbar;
   ........
 ```
 
+### `Generic component` örneği.
+
+```js script
+import React from "react";
+
+const Rainbow = (WrappedComponent) => {
+    const renkler = ['red','pink','orange','blue','green'];
+    const randomRenk = renkler[Math.floor(Math.random()*6)];
+    const className = randomRenk + '-text';
+    
+    return (props) => (
+        <div className={className}>
+            <WrappedComponent {...props}/>
+        </div>
+    )
+}
+
+export default Rainbow;
+// Kullanım export default Rainbow(About); About sayfası her yenilendiğinde yazının rengi değişir.
+```
+
 [React router v6 changes](https://diyifang.medium.com/react-router-v6-changes-cc2f977f418f)
