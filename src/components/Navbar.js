@@ -1,16 +1,16 @@
-import { NavLink, useNavigate, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import React, { useEffect } from "react";
 
 const Navbar = () => {
 
-    const history = useNavigate();
+    //const history = useNavigate();
     const { state } = useLocation();
 
      useEffect(() => {
        if (state === null || state === undefined) {
           setTimeout(() => {
-            history("/about");
-          }, 2000);
+            //history("/about");
+          }, 20000);
        }
      });
 
