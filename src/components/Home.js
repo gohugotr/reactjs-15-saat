@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import ComfyLogo from "../images/logo.webp"
 
 class Home extends Component {
   state = {
@@ -37,10 +38,11 @@ class Home extends Component {
       posts.length && !isloading ? (
         posts.map((gelenPost) => {
           return (
-            <div className="card " key={gelenPost.id}>
-              <div className="card-content ">
+            <div className="post card" key={gelenPost.id}>
+              <img src={ComfyLogo} alt="Logo"/>
+              <div className="card-content">
                 <Link to={"/" + gelenPost.id}>
-                  <h4 className="card-title ">{gelenPost.title}</h4>
+                  <h4 className="card-title red-text">{gelenPost.title}</h4>
                 </Link>
                 {gelenPost.body}
               </div>
@@ -55,7 +57,7 @@ class Home extends Component {
 
     return (
       <div>
-        <div className="container">
+        <div className="home container">
           <h4 className="center">Home</h4>
            {postlist}
         </div>

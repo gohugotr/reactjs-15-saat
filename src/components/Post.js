@@ -24,7 +24,7 @@ class Post extends Component {
     const {post} = this.state;
     const postData =  post ? (
       <div className="post">
-        <h3 className="center">{ post.title}</h3>
+        <h3 className="center red-text">{ post.title}</h3>
         <p>{ post.body}</p>
       </div>
     ) : (
