@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import ComfyLogo from "../images/logo.webp"
+import ComfyLogo from "../images/logo.webp";
 
 class Home extends Component {
   state = {
@@ -39,7 +39,7 @@ class Home extends Component {
         posts.map((gelenPost) => {
           return (
             <div className="post card" key={gelenPost.id}>
-              <img src={ComfyLogo} alt="Logo"/>
+              <img src={ComfyLogo} alt="Logo" />
               <div className="card-content">
                 <Link to={"/" + gelenPost.id}>
                   <h4 className="card-title red-text">{gelenPost.title}</h4>
@@ -59,7 +59,7 @@ class Home extends Component {
       <div>
         <div className="home container">
           <h4 className="center">Home</h4>
-           {postlist}
+          {postlist}
         </div>
         {/* <button onClick={this.onSearchImage}>Post Getir</button> */}
       </div>
