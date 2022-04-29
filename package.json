@@ -1,5 +1,6 @@
 {
   "name": "galeri",
+  "homepage": "https://galeri.bizimadres.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
